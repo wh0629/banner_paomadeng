@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跑马灯-轮播</title>
+    <script src="https://code.jquery.com/jquery-2.0.0.min.js"></script>
+    <style>
+        body{margin: 0;padding: 0;background: #f8f9fd;}
+        p{margin: 0;padding: 0;}
+        .clearfix:after{content: '';display: block;clear: both;;height:0;visibility: hidden;}
+        .w1100{width: 1100px;margin: 0 auto;}
+        .person-info{margin-top: 20px;}
+        .person-info-wrap{position: relative;}
+        .person-left{display: inline-block;text-align: left;margin-right: 14px;float: left;}
+        .person-one{border-radius: 4px;background: #fff;padding: 17px 16px; border: 1px solid #fff;}
+        .person-one img{vertical-align: top;}
+        .person-base{display: inline-block;margin-left: 5px;width: 175px;overflow: hidden;color: #666;font-size: 12px;}
+        .person-base p strong{font-size: 16px;color: #444;}
+        .person-base p:last-child{width: 175px;width: 175px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+        .person-left .person-one{margin-bottom: 14px;}
+        .person-left .person-one:hover{ border: 1px solid #a7b2d5;}
+    </style>
+</head>
+<body>
+<div class="person-info w1100" style="overflow: hidden;">
+    <div class="person-info-wrap clearfix" style="width:99999px;">
+        <div class="person-left">
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/woman_02.png" alt="" >
+                <div class="person-base">
+                    <p><strong>胡女士</strong> 女，26岁</p>
+                    <p>本科，3年经验，西南政法大学</p>
+                </div>
+            </div>
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/man_01.jpg" alt="" >
+                <div class="person-base">
+                    <p><strong>魏先生</strong> 男，58岁</p>
+                    <p>本科，35年经验，渝州大学（现重庆工商大学）</p>
+                </div>
+            </div>
+        </div>
+        <div class="person-left">
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/man_01.jpg" alt="" >
+                <div class="person-base">
+                    <p><strong>郎先生</strong> 男，34岁</p>
+                    <p>本科，11年经验，乐山师范学院</p>
+                </div>
+            </div>
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/man_02.png" alt="" >
+                <div class="person-base">
+                    <p><strong>陈先生</strong> 男，27岁</p>
+                    <p>本科，3年经验，西南科技大学城市学院</p>
+                </div>
+            </div>
+        </div>
+        <div class="person-left">
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/man_02.png" alt="" >
+                <div class="person-base">
+                    <p><strong>杨先生</strong> 男，52岁</p>
+                    <p>本科，30年经验，重庆经贸管理学院</p>
+                </div>
+            </div>
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/man_02.png" alt="" >
+                <div class="person-base">
+                    <p><strong>吴先生</strong> 男，28岁</p>
+                    <p>本科，4年经验，重庆文理学院</p>
+                </div>
+            </div>
+        </div>
+        <div class="person-left">
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/woman_01.png" alt="" >
+                <div class="person-base">
+                    <p><strong>刘女士</strong> 女，33岁</p>
+                    <p>本科，10年经验，重庆师范大学</p>
+                </div>
+            </div>
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/man_02.png" alt="" >
+                <div class="person-base">
+                    <p><strong>张先生</strong> 男，37岁</p>
+                    <p>本科，14年经验，重庆工商大学</p>
+                </div>
+            </div>
+        </div>
+        <div class="person-left">
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/man_01.jpg" alt="" >
+                <div class="person-base">
+                    <p><strong>任先生</strong> 男，32岁</p>
+                    <p>本科，11年经验，贵州大学</p>
+                </div>
+            </div>
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/woman_01.png" alt="" >
+                <div class="person-base">
+                    <p><strong>刘女士</strong> 女，28岁</p>
+                    <p>本科，6年经验，四川大学</p>
+                </div>
+            </div>
+        </div>
+        <div class="person-left">
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/woman_02.png" alt="" >
+                <div class="person-base">
+                    <p><strong>胡女士</strong> 女，26岁</p>
+                    <p>本科，3年经验，西南政法大学</p>
+                </div>
+            </div>
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/man_01.jpg" alt="" >
+                <div class="person-base">
+                    <p><strong>魏先生</strong> 男，58岁</p>
+                    <p>本科，35年经验，渝州大学（现重庆工商大学）</p>
+                </div>
+            </div>
+        </div>
+        <div class="person-left">
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/man_01.jpg" alt="" >
+                <div class="person-base">
+                    <p><strong>郎先生</strong> 男，34岁</p>
+                    <p>本科，11年经验，乐山师范学院</p>
+                </div>
+            </div>
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/man_02.png" alt="" >
+                <div class="person-base">
+                    <p><strong>陈先生</strong> 男，27岁</p>
+                    <p>本科，3年经验，西南科技大学城市学院</p>
+                </div>
+            </div>
+        </div>
+        <div class="person-left">
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/man_02.png" alt="" >
+                <div class="person-base">
+                    <p><strong>杨先生</strong> 男，52岁</p>
+                    <p>本科，30年经验，重庆经贸管理学院</p>
+                </div>
+            </div>
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/man_02.png" alt="" >
+                <div class="person-base">
+                    <p><strong>吴先生</strong> 男，28岁</p>
+                    <p>本科，4年经验，重庆文理学院</p>
+                </div>
+            </div>
+        </div>
+        <div class="person-left">
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/woman_01.png" alt="" >
+                <div class="person-base">
+                    <p><strong>刘女士</strong> 女，33岁</p>
+                    <p>本科，10年经验，重庆师范大学</p>
+                </div>
+            </div>
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/man_02.png" alt="" >
+                <div class="person-base">
+                    <p><strong>张先生</strong> 男，37岁</p>
+                    <p>本科，14年经验，重庆工商大学</p>
+                </div>
+            </div>
+        </div>
+        <div class="person-left">
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/man_01.jpg" alt="" >
+                <div class="person-base">
+                    <p><strong>任先生</strong> 男，32岁</p>
+                    <p>本科，11年经验，贵州大学</p>
+                </div>
+            </div>
+            <div class="person-one" onclick="toFocus();">
+                <img src="//assets.huibo.com/img/www/spreed/woman_01.png" alt="" >
+                <div class="person-base">
+                    <p><strong>刘女士</strong> 女，28岁</p>
+                    <p>本科，6年经验，四川大学</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var index = parseInt($('.person-info-wrap .person-left').length);//一共有多少个版块
+    var oneWidth = $('.person-left').outerWidth(true);//一个版块的宽度
+    var len =  -oneWidth*(index-4);//正常只显示4个板块，结果是往左移动的最大距离,应该为负值 -200
+    var timer = setTime();
+    function setTime() {
+      return setInterval(function () {
+        var left = parseInt($('.person-info-wrap').css('left'));// -100
+        if(len < left){
+          $('.person-info-wrap').animate({'left':(left-50)+'px'},1000,'linear');
+        }else{
+          $('.person-info-wrap').animate({'left':0+'px'});
+        }
+      },1000)
+    }
+    //鼠标覆盖的时候，停止滚动
+    $('.person-info').mouseover(function () {
+      window.clearInterval(timer);
+    }).mouseleave(function () {
+      timer = setTime();
+    })
+
+</script>
+</html>
